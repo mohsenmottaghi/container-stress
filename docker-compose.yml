@@ -1,23 +1,23 @@
-version: '3'
-
-lables:
-  co.mohsen.docker.container: container-stress 
-  co.mohsen.docker.author: Mohsen Mottaghi
-  co.mohsen.docker.infra: stress-test-area
+version: '3.7'
 
 services:
   stress:
     image: mohsenmottaghi/container-stress
+    lables:
+      co.mohsen.docker.container: container-stress 
+      co.mohsen.docker.author: Mohsen Mottaghi
+      co.mohsen.docker.infra: stress-test-area
     command: stress --verbose --vm 1 --vm-bytes 512M
     deploy:
       replicas: 5
       resources:
-        limits:
-          cpus: '0.50'
-          memory: 512M
-        reservations:
-          cpus: '0.25'
-          memory: 200M
+        # If you don`t know why you should define these elements, please don`t uncomment them
+        # limits:
+        #   cpus: '0.50'
+        #   memory: 512M
+        # reservations:
+        #   cpus: '0.25'
+        #   memory: 200M
       restart_policy:
         condition: on-failure
         delay: 2s
