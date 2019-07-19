@@ -10,14 +10,14 @@ services:
     command: stress --verbose --vm 1 --vm-bytes 512M
     deploy:
       replicas: 5
-      resources:
-        # If you don`t know why you should define these elements, please don`t uncomment them
-        # limits:
-        #   cpus: '0.50'
-        #   memory: 512M
-        # reservations:
-        #   cpus: '0.25'
-        #   memory: 200M
+      # If you don`t know why you should define these elements, please don`t uncomment them
+      # resources:
+      #   limits:
+      #     cpus: '0.50'
+      #     memory: 512M
+      #   reservations:
+      #     cpus: '0.25'
+      #     memory: 200M
       restart_policy:
         condition: on-failure
         delay: 2s
