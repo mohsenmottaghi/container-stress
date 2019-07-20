@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: container-stress
+spec:
+  selector:
+    matchLabels:
+      stress-area: here
+  replicas: 5
+  strategy: Recreate
+  template:
+    metadata:
+      labels:
+        stress-area: here
+    spec:
+      containers:
+      - name: container-stress
+        image: mohsenmottaghi/container-stress:latest
+        command: ["stress --verbose --vm 1 --vm-bytes 512M"]
+         # If you don`t know why you should define these elements, Don`t change them !
+        resources:
+          # limits:
+          #   memory: "720Mi"
+          #   cpu: "900m"
+          # requests:
+          #   memory: "256Mi"
+          #   cpu: "500m"
+
