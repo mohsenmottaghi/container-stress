@@ -3,10 +3,6 @@ version: '3.7'
 services:
   stress:
     image: mohsenmottaghi/container-stress
-    lables:
-      co.mohsen.docker.container: container-stress 
-      co.mohsen.docker.author: "Mohsen Mottaghi"
-      co.mohsen.docker.infra: stress-test-area
     command: stress --verbose --vm 1 --vm-bytes 512M
     deploy:
       replicas: 5
