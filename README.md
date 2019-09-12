@@ -79,6 +79,25 @@ For stress test on Swarm cluster, you can use the **docker-compose.yml** file.
 
 # Run Stress test on Kubernetes Cluster
 
-⚠ the Kubernetes deployment is not ready yet! but you can write your deployment and PR for adding to this repo ⚠
+For stress test on kubernetes cluster, you need to deploy the Deployment `yaml` file.
 
+```bash
+$ kubectl apply -f stress-deployment.yml
+```
+To check the deployment status:
+```bash
+$ kubectl get deployment container-stress
+```
+or check all resources:
+```bash
+$ kubectl get all
+```
 
+To remove deployment:
+```bash
+$ kubectl delete deployment container-stress
+```
+or 
+```bash
+$ kubectl delete -f stress-deployment.yml
+```
