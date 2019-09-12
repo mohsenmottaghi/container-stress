@@ -2,7 +2,7 @@ FROM alpine:latest
 
 ENV STRESS_VERSION 1.0.4
 
-COPY stress-$STRESS_VERSION.tar.gz
+COPY stress-$STRESS_VERSION.tar.gz . 
 
 RUN apk update --no-cache && \
     apk add --no-cache g++ make && \
