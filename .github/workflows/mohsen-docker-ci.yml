@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Docker check
+      run: docker version
+
+    - name: Build Docker image
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/mohsenmottaghi/container-stress/container-stress:latest-$(date +%s)
+
+    - name: Push Docker image
+      run: docker push docker.pkg.github.com/mohsenmottaghi/container-stress/container-stress:latest-$(date +%s)
+
