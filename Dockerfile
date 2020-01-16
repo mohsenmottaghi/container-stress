@@ -12,10 +12,7 @@ RUN apk update --no-cache && \
     cd stress-$STRESS_VERSION && \
     ./configure && make && make install && \
     cd / && rm -rf /stress-$STRESS_VERSION && \
-    apk del --rdepends --purge binutils gmp isl libgomp libatomic libgcc mpfr3 mpc1 libstdc++ gcc make
+    apk del --rdepends --purge gcc make
 
-
-
-
-
+CMD [ "stress", "--help" ]
 
