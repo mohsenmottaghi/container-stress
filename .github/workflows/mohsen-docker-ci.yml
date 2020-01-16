@@ -15,8 +15,8 @@ jobs:
       run: docker version
 
     - name: Build Docker image
-      run: docker build . --file Dockerfile --tag docker.pkg.github.com/mohsenmottaghi/container-stress/container-stress:latest-$(date +%s)
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/mohsenmottaghi/container-stress/container-stress:latest
 
     - name: Push Docker image
-      run: docker push docker.pkg.github.com/mohsenmottaghi/container-stress/container-stress:latest-$(date +%s)
+      run: docker.pkg.github.com/mohsenmottaghi/container-stress/container-stress:latest
 
