@@ -7,10 +7,10 @@ services:
     deploy:
       replicas: 5
       # If you don`t know why you should define these elements, Don`t Change them!
-      # resources:
-      #   limits:
-      #     cpus: '0.50'
-      #     memory: 512M
+      resources:
+        limits:
+          cpus: '500m'
+          memory: 750M
       #   reservations:
       #     cpus: '0.25'
       #     memory: 200M
