@@ -5,8 +5,7 @@ services:
     image: mohsenmottaghi/container-stress
     command: stress --verbose --vm 1 --vm-bytes 512M
     deploy:
-      replicas: 5
-      # If you don`t know why you should define these elements, Don`t Change them!
+      replicas: 1
       resources:
         limits:
           cpus: '500m'

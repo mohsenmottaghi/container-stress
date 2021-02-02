@@ -21,4 +21,3 @@ jobs:
       run: |
         docker login docker.pkg.github.com --username mohsenmottaghi -p ${{ secrets.GITHUB_PACKAGES }}
         docker push docker.pkg.github.com/mohsenmottaghi/container-stress/container-stress:latest
-
